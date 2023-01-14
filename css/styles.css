@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(175, 197, 197);
+    /* font-family: 'Lato', sans-serif; */
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Estilos tarjetas */
+
+.tarjeta {
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    color: #ffff;
+    transition: 1s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.tarjeta.active {
+    transform: rotateY(180deg);
+}
+
+.tarjeta > div {
+    padding: 30px;
+    border-radius: 15px;
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+}
+/* Tarjeta delantera */
+
+.tarjeta .tarjeta-delantera {
+    width: 100%;
+    background: url(../img/bg-tarjeta/delantera.jpg);
+    background-size: cover;
+}
+
+.tarjeta-delantera .logo-marca {
+    text-align: right;
+    min-height: 50px;
+}
+
+.tarjeta-delantera .logo-marca img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 80px;
+}
+
+.tarjeta-delantera .chip {
+    width: 100%;
+    max-width: 50px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-delantera .grupo .label {
+    font-size: 16px;
+    color: #7d8994;
+    margin-bottom: 5px;
+}
+
+.tarjeta-delantera .grupo .numero,
+.tarjeta-delantera .grupo .nombre,
+.tarjeta-delantera .grupo .expiracion {
+    color: #ffff;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.tarjeta-delantera .flexbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Tarjeta trasera */
+
+.tarjeta-trasera {
+    width: 100%;
+    background: url(../img/bg-tarjeta/trasera.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.tarjeta-trasera .barra-magnetica {
+    height: 40px;
+    background: rgb(15, 14, 14);
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.tarjeta-trasera .datos {
+    margin-top: 60px;
+    display: flex;
+}
+.tarjeta-trasera .datos {
+    margin-bottom: 5px;
+}
+.tarjeta-trasera .datos #firma {
+    width: 70%;    
+}
+.firma {
+    height: 40px;
+    background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);    
+}
+.tarjeta-trasera .datos #cvv {
+    width: 20%;    
+}
+.tarjeta-trasera .datos #cvv .cvv {
+    height: 40px;
+    background: #fff;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+a {
+    color:#7d8994;
+    cursor: pointer;
+}
+
+
+
+
