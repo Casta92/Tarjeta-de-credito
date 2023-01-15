@@ -47,6 +47,11 @@ body{
     box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
 }
 /* Tarjeta delantera */
+.bank-name{
+    height: 14px;
+    position: relative;
+    left: 400px;
+}
 
 .tarjeta .tarjeta-delantera {
     width: 100%;
@@ -71,18 +76,30 @@ body{
     max-width: 50px;
     margin-bottom: 20px;
 }
+.card-number {
+    display: flex;
+    width: 80%;
+    position: relative;
+    left: 50px;
+    justify-content: space-between;
+
+}
+.card-number .numero{
+    height: 70px;
+    font-size: 44px;
+}
 
 .tarjeta-delantera .grupo .label {
-    font-size: 16px;
-    color: #7d8994;
+    font-size: 12px;
+    color: #969798;
     margin-bottom: 5px;
 }
 
-.tarjeta-delantera .grupo .numero,
+/* .tarjeta-delantera .grupo .numero, */
 .tarjeta-delantera .grupo .nombre,
 .tarjeta-delantera .grupo .expiracion {
     color: #ffff;
-    font-size: 22px;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -140,6 +157,111 @@ body{
 a {
     color:#7d8994;
     cursor: pointer;
+}
+
+/* Boton */
+
+.contenedor-btn .btn-abrir-formulario {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+    background: rgb(102, 98, 220);
+    color: #fff;
+    position: relative;
+    top: -25px;   
+    z-index: 3; 
+    border-radius: 100%;
+    box-shadow: 5px 4px 8px rgba(64, 98, 236, 0.4);
+    padding: 5px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.contenedor-btn .btn-abrir-formulario:hover{
+    background: #3562af;
+}
+.contenedor-btn .btn-abrir-formulario.active{
+    transform: rotate(45deg);
+}
+
+/* Formulario de Tarjeta */
+.formulario-tarjeta{
+    background: #fff;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 28px;
+    position: relative;
+    top: -150px;
+    z-index: 1;
+    padding: 150px 30px 30px 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-out;
+}
+
+.formulario-tarjeta.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.formulario-tarjeta label {
+    display: inline-block;
+    margin-left: 22px;
+    color: #7d8994;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-send {
+    border: 2px solid #ced6E0;
+    font-size: 18px;
+    height: 50px;
+    width: 95%;
+    padding: 5px 12px;
+    transition: .3s ease all;
+    border-radius: 12px;
+}
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+    border: 2px solid #92bfed;
+
+}
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+    outline: rgb(4,4,4);
+    box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);    
+}
+.formulario-tarjeta input {
+    margin: 20px;
+    text-transform: uppercase;
+}
+.formulario-tarjeta .grupo-select {
+    margin: 20px;
+}
+.formulario-tarjeta .flexbox{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 22px;
+}
+
+.btn-send {
+    background-color: rgb(235, 53, 53);
+    color: #fff;
+    border-radius: 24px;
+    cursor: pointer;  
+    margin-left: 20px;  
+}
+.formulario-tarjeta .expira {
+    width: 50%;
+}
+.formulario-tarjeta .cvv {
+    width: 30%;
+}
+
+.formulario-tarjeta .grupo-select{
+    width: 100%;
+    margin-right: 4px;
 }
 
 

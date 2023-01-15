@@ -9,22 +9,29 @@
 </head>
 <body>
     <div class="contenedor">
+        <!-- Tarjeta -->
         <section class="tarjeta" id="tarjeta">
             <div class="tarjeta-delantera">
+                <div class="bank-name">Bank Name</div>
                 <img class="chip" src="./img/chip-tarjeta.png" alt="">
                 <div class="datos">
                     <div class="grupo">
-                        <p class="label">Número Tarjeta</p>
-                        <p class="numero"> #### #### #### ####</p>
+                        <!-- <p class="label">CARD NUMBER</p> -->
+                        <div class="card-number">
+                            <p class="numero">#### #### #### ####</p>
+                            <!-- <p class="numero"> ####</p>
+                            <p class="numero"> ####</p>
+                            <p class="numero"> ####</p> -->
+                        </div>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox"> 
                         <div class="grupo" id="nombre">
-                            <p class="label">Nombre Tarjeta</p>
+                            <p class="label">CARD HOLDER</p>
                             <p class="nombre">DANIAL DENVER</p>
                         </div> 
                         <div class="grupo" id="expiracion">
-                            <p class="label">Nombre Tarjeta</p>
-                            <p class="expiracion"><span class="mes">MM</span> / <span class="año">AA</span> </p>
+                            <p class="label">VALID THRU</p>
+                            <p class="expiracion"><span class="month">MM</span> / <span class="year">AA</span> </p>
                         </div>    
                         <div class="logo-marca">
                             <img src="./img/logos/visa.png" alt="">
@@ -44,14 +51,57 @@
                         <p class="cvv">546</p>
                     </div>
                 </div>   
-                <p class="leyenda">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <a class="link-github" href="https://github.com/Casta92">www.andrescastaneda.com</a>             
+                <p class="leyenda">Este es un proyecto prueba</p>
+                <a class="link-github" href="https://github.com/Casta92">Ingresa a mi Github</a>             
             </div>
         </section>
+        <!-- Boton -->
+        <div class="contenedor-btn">
+            <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                +<!-- <i class="fa-solid fa-plus"></i>     -->
+            </button>
+        </div>
+        <!-- Formulario -->
+        <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+            <div class="grupo">
+                <label for="inputNumero">CREDIT CARD NUMBER</label>
+                <div class="numerosTarjeta">
+                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                    <!-- <input type="text" id="inputNumero" maxlength="4" autocomplete="off">
+                    <input type="text" id="inputNumero" maxlength="4" autocomplete="off">
+                    <input type="text" id="inputNumero" maxlength="4" autocomplete="off"> -->
+                </div>
+            </div>
+            <div class="grupo">
+                <label for="inputNombre">CARD HOLDER NAME</label>
+                <input type="text" id="inputNombre" autocomplete="off" maxlength="25">
+            </div>
+            <div class="flexbox">
+                <div class="grupo expira">
+                <label for="selectMonth">VALID THRU</label>
+                    <div class="flexbox">
+                        <div class="grupo-select">
+                            <select name="month" id="selectMonth">
+                                <option disabled selected>Month</option>
+                            </select>
+                        </div>
+                        <div class="grupo-select">
+                            <select name="year" id="selectYear">
+                                <option disabled selected>Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="grupo cvv">
+                    <label for="inputCvv">CVV</label>
+                    <input type="text" id="inputCvv" maxlength="4" autocomplete="off">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-send">SUBMIT DETAILS</button>
+        </form>
     </div>
-
-
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
     <script src="./js/tarjetaDinamica.js"></script>
 </body>

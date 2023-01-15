@@ -1,12 +1,128 @@
 const tarjeta = document.querySelector('#tarjeta');
+const btnAbrirFormulario = document.querySelector('#btn-abrir-formulario');
+const formulario = document.querySelector('#formulario-tarjeta');
+const numeroTarjeta = document.querySelector('#tarjeta .numero');
+const nombreTarjeta = document.querySelector('#tarjeta .nombre');
+const mesExpiracion = document.querySelector('#tarjeta .month');
+const yearExpiracion = document.querySelector('#tarjeta .year');
+const cvv = document.querySelector('#tarjeta .cvv');
 
-tarjeta.addEventListener('click', () => {
-    console.log("estoy probando")
-    tarjeta.classList.toggle('active');
-});
+// Voltear la tarjeta 
+const mostrarFrente = () => {
+    if(tarjeta.classList.contains('active')){
+        tarjeta.classList.remove('active')
+    }
+}
+const mostrarAtras = ()=>{
+    if(!tarjeta.classList.contains('active')){
+        tarjeta.classList.toggle('active')
+    }
+}
 
-// const regreso = document.querySelector('#tarjeta')
+
+
+
+// Girar tarjeta
 // tarjeta.addEventListener('click', () => {
-//     console.log("estoy probando el regreso")
-//     tarjeta.classList.remove('active');
+    
+//     tarjeta.classList.toggle('active');
 // });
+
+// Abrir formulario
+btnAbrirFormulario.addEventListener('click', ()=>{
+    btnAbrirFormulario.classList.toggle('active');
+    formulario.classList.toggle('active');
+})
+
+// Select mes generado
+for(let i= 1; i<= 12; i++){
+    let opcion = document.createElement('option');
+    opcion.value = i;
+    opcion.innerText = i;
+    formulario.selectMonth.appendChild(opcion);
+}
+
+// Select año generado 
+const actualYear= new Date().getFullYear();
+
+for(let i= actualYear; i<= actualYear + 8; i++){
+    let opcion = document.createElement('option');
+    opcion.value = i;
+    opcion.innerText = i;
+    formulario.selectYear.appendChild(opcion);
+}
+
+// Input N° Tarjeta
+formulario.inputNumero.addEventListener('keyup', (e)=> {
+    let valorInput = e.target.value;
+
+    formulario.inputNumero.value= valorInput
+    //Elimniar espacios en blanco
+    .replace(/\s/g, '')
+    //Eliminar letras
+    .replace(/\D/g, '')
+    //Espaciar cada 4 caracteres
+    .replace(/([0-9]{4})/g, '$1 ')
+    //Elimina el ultimo espacio
+    .trim()
+
+
+    numeroTarjeta.textContent=valorInput;
+
+    if (valorInput == ''){
+        numeroTarjeta.textContent = '#### #### #### ####'
+    }
+
+    //Voltear la tarjeta
+    mostrarFrente()
+}) 
+
+// Input Nombre Tarjeta
+
+formulario.inputNombre.addEventListener('keyup', (e)=>{
+    let valorInput = e.target.value;
+
+    formulario.inputNombre.value= valorInput
+    .replace(/[0-9]/g, '');
+
+    nombreTarjeta.textContent=valorInput;
+    if (valorInput == ''){
+        nombreTarjeta.textContent = 'DANIAL DENVER'
+    }
+
+
+     //Voltear la tarjeta
+     mostrarFrente()
+
+})
+
+// Seleccionar mes y año
+
+formulario.selectMonth.addEventListener('change', (e)=>{
+    mesExpiracion.textContent= e.target.value;
+
+    mostrarFrente()  
+    
+})
+
+formulario.selectYear.addEventListener('change', (e)=>{
+    yearExpiracion.textContent= e.target.value.slice(2);
+
+    mostrarFrente() 
+    
+})
+
+// CVV
+
+formulario.inputCvv.addEventListener('keyup', (e)=>{
+
+    mostrarAtras()
+
+    formulario.inputCvv.value= formulario.inputCvv.value
+    //Eliminar espacios en blanco
+    .replace(/\s/g, '')
+    //Eliminar letras
+    .replace(/\D/g, '')
+
+    cvv.textContent= formulario.inputCvv.value
+})
