@@ -6,6 +6,7 @@ const nombreTarjeta = document.querySelector('#tarjeta .nombre');
 const mesExpiracion = document.querySelector('#tarjeta .month');
 const yearExpiracion = document.querySelector('#tarjeta .year');
 const cvv = document.querySelector('#tarjeta .cvv');
+const insertarColumna= document.querySelector('#btnSend');
 
 // Voltear la tarjeta 
 const mostrarFrente = () => {
@@ -18,9 +19,6 @@ const mostrarAtras = ()=>{
         tarjeta.classList.toggle('active')
     }
 }
-
-
-
 
 // Girar tarjeta
 // tarjeta.addEventListener('click', () => {
@@ -126,3 +124,36 @@ formulario.inputCvv.addEventListener('keyup', (e)=>{
 
     cvv.textContent= formulario.inputCvv.value
 })
+
+// Insertar fila
+
+insertarColumna.addEventListener('click', ()=>{
+    let tblDatos = document.querySelector('#tblDatos').insertRow(-1);
+    let col1 = tblDatos.insertCell(0);
+    let col2 = tblDatos.insertCell(1);
+    let col3 = tblDatos.insertCell(2);
+
+
+    col1.innerHTML =  '**** **** **** '+ numeroTarjeta.textContent.slice(15);
+    col2.innerHTML =  nombreTarjeta.textContent;
+
+    if(mesExpiracion.value=''){
+        col3.innerHTML =  'Sin fe'
+    }
+    else {
+        col3.innerHTML =  mesExpiracion.textContent + '/' + yearExpiracion.textContent;
+
+    }
+    mostrarFrente()
+
+    //Reinicio Tarjeta
+    numeroTarjeta.textContent = '#### #### #### ####';
+    nombreTarjeta.textContent = '';
+    mesExpiracion.textContent = 'MM';
+    yearExpiracion.textContent = 'AA';
+
+    //Reinicio form
+    formulario.reset()
+
+})
+

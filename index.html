@@ -27,7 +27,7 @@
                     <div class="flexbox"> 
                         <div class="grupo" id="nombre">
                             <p class="label">CARD HOLDER</p>
-                            <p class="nombre">DANIAL DENVER</p>
+                            <p class="nombre"></p>
                         </div> 
                         <div class="grupo" id="expiracion">
                             <p class="label">VALID THRU</p>
@@ -99,9 +99,23 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-send">SUBMIT DETAILS</button>
+            <button type="button" id="btnSend" class="btn-send">SUBMIT DETAILS</button>
         </form>
     </div>
+    <div class="tabla-de-datos">
+        <table id="tblDatos" class="tabla" border="1">
+            <tr class="tabla">Tabla de recopilación de datos</tr>
+            <tr class="tabla">
+                <td class="tabla"> * Numero de la Tarjeta </td>
+                <td class="tabla"> * Nombre de la Tarjeta </td>
+                <td class="tabla"> * Fecha de Expiración </td>
+            </tr>
+        
+        </table>
+    </div>
+
+
+
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
     <script src="./js/tarjetaDinamica.js"></script>
 </body>
