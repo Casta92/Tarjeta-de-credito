@@ -28,7 +28,7 @@ body{
     transform: rotateY(0deg);
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 2;
 }
 
@@ -170,6 +170,21 @@ body{
 a {
     color:#7d8994;
     cursor: pointer;
+}
+.link-github{
+    /* background: #92bfed; */
+    cursor: pointer;
+    border-radius: 12px;
+    max-width: 175px;
+    text-decoration: none;
+    z-index: 4;
+}
+.link-github:hover{
+    color: #cfdbef;
+    font: 300;
+    position: relative;
+    margin-right: 180px;
+   
 }
 
 /* Boton */

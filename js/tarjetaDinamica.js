@@ -88,19 +88,21 @@ formulario.inputNombre.addEventListener('keyup', (e)=>{
 
     nombreTarjeta.textContent=valorInput;
     
-    if (valorInput.length <10) {
+    if (valorInput.length <15) {
         inputNombreForm.classList.add("texto-normal");
         inputNombreForm.classList.remove("texto-pequeño");
 
     }
 
-    else if (valorInput.length >= 10) {
+    else if (valorInput.length >= 15) {
         console.log("hey")
         inputNombreForm.classList.remove("texto-normal");
         inputNombreForm.classList.add("texto-pequeño");
-
-
     }
+    if (valorInput == ''){
+        nombreTarjeta.textContent = '----- ---- -----'
+    }
+
 
      //Voltear la tarjeta
      mostrarFrente()
@@ -161,12 +163,14 @@ insertarColumna.addEventListener('click', ()=>{
 
     //Reinicio Tarjeta
     numeroTarjeta.textContent = '#### #### #### ####';
-    nombreTarjeta.textContent = '';
+    nombreTarjeta.textContent = '----- ---- -----';
     mesExpiracion.textContent = 'MM';
     yearExpiracion.textContent = 'AA';
 
     //Reinicio form
     formulario.reset()
+    //cerrar formulario
+    formulario.classList.toggle('active');
 
 })
 
