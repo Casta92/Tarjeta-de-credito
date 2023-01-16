@@ -103,10 +103,8 @@ formulario.inputNombre.addEventListener('keyup', (e)=>{
         nombreTarjeta.textContent = '----- ---- -----'
     }
 
-
      //Voltear la tarjeta
      mostrarFrente()
-
 })
 
 // Seleccionar mes y año
@@ -115,14 +113,12 @@ formulario.selectMonth.addEventListener('change', (e)=>{
     mesExpiracion.textContent= e.target.value;
 
     mostrarFrente()  
-    
 })
 
 formulario.selectYear.addEventListener('change', (e)=>{
     yearExpiracion.textContent= e.target.value.slice(2);
 
-    mostrarFrente() 
-    
+    mostrarFrente()   
 })
 
 // CVV
@@ -171,6 +167,5 @@ insertarColumna.addEventListener('click', ()=>{
     formulario.reset()
     //cerrar formulario
     formulario.classList.toggle('active');
-
 })
 
