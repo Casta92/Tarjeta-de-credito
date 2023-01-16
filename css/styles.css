@@ -98,10 +98,18 @@ body{
 .tarjeta-delantera .grupo .nombre,
 .tarjeta-delantera .grupo .expiracion {
     color: #ffff;
-    font-size: 18px;
+    /* font-size: 18px; */
     text-transform: uppercase;
     display: relative;
 }
+
+.texto-normal{
+    font-size: 18px;
+}
+.texto-pequeño{
+    font-size: 14px;
+}
+
 .tarjeta-delantera .grupo .nombre {
     max-width: 200px;
 }
@@ -282,3 +290,58 @@ a {
     margin: auto;
 }
 
+@media (max-width: 650px) {
+    body{
+        background-color: rgb(25, 19, 19);
+    }
+    section{
+        width: 400px;
+
+    }
+    .card-number .numero{
+        font-size: 20px;
+    }
+    .tarjeta-delantera .grupo .label {
+        font-size: 8px;
+        color: #969798;
+    }
+    
+    .tarjeta-delantera .grupo .texto-normal{
+        font-size: 10px;
+    }
+    .tarjeta-delantera .grupo .texto-pequeño{
+        font-size: 6px;
+    }
+
+    .tarjeta-delantera .grupo .expiracion {
+        font-size: 8px;
+        
+    }
+    .bank-name{
+        left: 150px;
+    }
+    .grupo .flexbox {
+        display: block ;
+    }
+    #inputCvv{
+        margin-top: 37px;
+    }
+    .btn-send {
+        font-size: 12px;        
+    }
+    .formulario-tarjeta input,
+    .formulario-tarjeta select,
+    .btn-send {
+        font-size: 10px;        
+    }
+    .texto-normal{
+        font-size: 12px;
+    }
+    .texto-pequeño{
+        font-size: 8px;
+    }
+    .tabla{
+        font-size: 10px;
+    }
+    
+}

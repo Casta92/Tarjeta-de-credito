@@ -3,10 +3,13 @@ const btnAbrirFormulario = document.querySelector('#btn-abrir-formulario');
 const formulario = document.querySelector('#formulario-tarjeta');
 const numeroTarjeta = document.querySelector('#tarjeta .numero');
 const nombreTarjeta = document.querySelector('#tarjeta .nombre');
+const inputNombreForm = document.querySelector('#inputNombreTarjeta')
 const mesExpiracion = document.querySelector('#tarjeta .month');
 const yearExpiracion = document.querySelector('#tarjeta .year');
 const cvv = document.querySelector('#tarjeta .cvv');
 const insertarColumna= document.querySelector('#btnSend');
+const numeroMesesAño = 12;
+const numeroMaxAñoExpiracion = 8;
 
 // Voltear la tarjeta 
 const mostrarFrente = () => {
@@ -22,7 +25,6 @@ const mostrarAtras = ()=>{
 
 // Girar tarjeta
 // tarjeta.addEventListener('click', () => {
-    
 //     tarjeta.classList.toggle('active');
 // });
 
@@ -33,7 +35,7 @@ btnAbrirFormulario.addEventListener('click', ()=>{
 })
 
 // Select mes generado
-for(let i= 1; i<= 12; i++){
+for(let i= 1; i<= numeroMesesAño; i++){
     let opcion = document.createElement('option');
     opcion.value = i;
     opcion.innerText = i;
@@ -43,7 +45,7 @@ for(let i= 1; i<= 12; i++){
 // Select año generado 
 const actualYear= new Date().getFullYear();
 
-for(let i= actualYear; i<= actualYear + 8; i++){
+for(let i= actualYear; i<= actualYear + numeroMaxAñoExpiracion; i++){
     let opcion = document.createElement('option');
     opcion.value = i;
     opcion.innerText = i;
@@ -84,10 +86,20 @@ formulario.inputNombre.addEventListener('keyup', (e)=>{
     .replace(/[0-9]/g, '');
 
     nombreTarjeta.textContent=valorInput;
-    if (valorInput == ''){
-        nombreTarjeta.textContent = 'DANIAL DENVER'
+    
+    if (valorInput.length <10) {
+        inputNombreForm.classList.add("texto-normal");
+        inputNombreForm.classList.remove("texto-pequeño");
+
     }
 
+    else if (valorInput.length >= 10) {
+        console.log("hey")
+        inputNombreForm.classList.remove("texto-normal");
+        inputNombreForm.classList.add("texto-pequeño");
+
+
+    }
 
      //Voltear la tarjeta
      mostrarFrente()
