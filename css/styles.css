@@ -34,6 +34,8 @@ body{
 
 .tarjeta.active {
     transform: rotateY(180deg);
+    backface-visibility: visible;
+
 }
 
 .tarjeta > div {

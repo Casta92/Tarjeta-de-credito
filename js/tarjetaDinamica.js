@@ -24,9 +24,9 @@ const mostrarAtras = ()=>{
 }
 
 // Girar tarjeta
-// tarjeta.addEventListener('click', () => {
-//     tarjeta.classList.toggle('active');
-// });
+tarjeta.addEventListener('click', () => {
+    tarjeta.classList.toggle('active');
+});
 
 // Abrir formulario
 btnAbrirFormulario.addEventListener('click', ()=>{
