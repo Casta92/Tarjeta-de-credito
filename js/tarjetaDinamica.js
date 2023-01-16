@@ -20,7 +20,7 @@ const mostrarFrente = () => {
 const mostrarAtras = ()=>{
     if(!tarjeta.classList.contains('active')){
         tarjeta.classList.toggle('active')
-        console.log("Se está girando la tarjeta")
+        // console.log("Se está girando la tarjeta")
     }
 }
 
