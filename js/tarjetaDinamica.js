@@ -5,6 +5,7 @@ const numeroTarjeta = document.querySelector('#tarjeta .numero');
 const nombreTarjeta = document.querySelector('#tarjeta .nombre');
 const inputNombreForm = document.querySelector('#inputNombreTarjeta')
 const mesExpiracion = document.querySelector('#tarjeta .month');
+const actualYear= new Date().getFullYear();
 const yearExpiracion = document.querySelector('#tarjeta .year');
 const cvv = document.querySelector('#tarjeta .cvv');
 const insertarColumna= document.querySelector('#btnSend');
@@ -44,7 +45,6 @@ for(let i= 1; i<= numeroMesesAño; i++){
 }
 
 // Select año generado 
-const actualYear= new Date().getFullYear();
 
 for(let i= actualYear; i<= actualYear + numeroMaxAñoExpiracion; i++){
     let opcion = document.createElement('option');
